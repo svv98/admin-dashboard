@@ -1,2 +1,2 @@
-# admin-dashboard
-The Odin Project 
+# Admin Dashboard
+Intermediate HTML and CSS project for The Odin Project 
