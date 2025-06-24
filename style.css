@@ -1,0 +1,372 @@
+@font-face {
+    font-family: 'lemonmilk';
+    src: url('./fonts/lemonmilk-regular-webfont.woff2') format('woff2'),
+         url('./fonts/lemonmilk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('./fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('./fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'robotobold';
+    src: url('./fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('./fonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'lemonmilklight';
+    src: url('./fonts/lemonmilk-light-webfont.woff2') format('woff2'),
+         url('./fonts/lemonmilk-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* lemonmilklight     lemonmilk    roboto     robotobold */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.page{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+    color: white;
+    height: 100%;
+}
+
+
+.sidebar{
+    background-color: #011825;
+    grid-area: sidebar;
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    font-family: robotobold;
+    padding-right: 10px;
+}
+.sidebar a{
+    text-decoration: none;
+    color: white;
+}
+.sidebar svg>path{
+    fill: #486886;
+}
+.dashboard{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0 0 10px;
+    font-size: 20px;
+    font-family: lemonmilk;
+}
+.dashboard>svg{
+    width: 50px;
+}
+.sidebar>ul{
+    list-style: none;
+    margin-left: 20px;
+    padding: 0;
+    display: inline-grid;
+}
+.sidebar li svg{
+    width: 30px;
+}
+.sidebar li a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 5px 0;
+    font-size: 15px;
+}
+
+
+
+.header{
+    grid-area: header;
+    background-color: #1A2033;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    padding: 10px 20px 0;
+    border-bottom: 5px solid #0a0d1610;
+}
+.header svg{
+    width: 25px;
+    fill: #a380c4;
+}
+.profile-picture{
+    background-image: url(./media/emoji.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio : 1 / 1;
+    border: 2px solid rgba(255, 255, 255, 0.041);
+}
+
+.upper-header{
+    display: grid;
+    grid-template-columns: minmax(150px, 2fr) minmax(150px, 1fr);
+    gap: 20px;
+}
+.searchbar{
+    flex: 2;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-content: center;
+    gap: 10px;
+}
+.searchbar form>input{
+    height: 25px;
+    width: 95%;
+    border-radius: 15px;
+    color: white;
+    font-family: roboto;
+    background-color: #645374;
+    border: none;
+    padding-left: 10px
+}
+form>input:focus{
+    background-color: #645374;
+    outline: 3px solid #a380c4;
+    box-shadow: 5px 10px 50px 0 #645374;
+    font-family: robotobold;
+}
+.account{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.account .profile-picture{
+    height: 50px;
+    aspect-ratio : 1 / 1;
+    border-radius: 25px;
+}
+.account .name{
+    font-size: 15px;
+    font-family: robotobold;
+    color: #ccb1e6;
+}
+
+.lower-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    gap: 20px;
+}
+.welcome{
+    display: grid;
+    grid-template-columns: 100px minmax(min-content, 1fr);
+    justify-content: start;
+    align-content: center;
+    column-gap: 20px;
+}
+.welcome .profile-picture{
+    height: 100px;
+    border-radius: 50px;
+    grid-area: 1/1/3/2;
+}
+.welcome-text{
+    grid-column: 2/3;
+    align-self: end;
+    font-family: lemonmilklight;
+    font-size: 10px;
+}
+.welcome .name{
+    grid-column: 2/3;
+    align-self: start;
+    font-family: robotobold;
+    font-size: 20px;
+}
+.welcome .name>span{
+    color: #a380c4;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    gap: 10px;
+}
+.buttons>button{
+    font-family: lemonmilk;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: #645374;
+    border: 2px solid #a380c444;
+    outline: 1px solid rgba(255, 255, 255, 0.438);
+    color: white;
+}
+.buttons>button:hover{
+    font-family: lemonmilk;
+    background-color: #a380c4;font-size: 15px;
+    border: 2px solid #645374;
+    outline: 1px solid #42364d;
+    color: #42364d;
+}
+
+
+
+.main{
+    grid-area: main;
+    background-color: #162B42;
+    display: grid;
+    grid-template-columns: minmax(min-content,7fr) minmax(200px,3fr);
+    grid-template-areas: 
+    "projects announcements"
+    "projects trending";
+    gap: 20px;
+    padding: 10px 20px 20px;
+}
+.main .mainTitle{
+    font-family: lemonmilk;
+    font-weight: bold;
+    font-size: 15px;
+    color: #DA7F97;
+    margin: 10px 0 -10px;
+}
+
+#cardTitle, #newsTitle{
+    text-transform: uppercase;
+    font-family: lemonmilk;
+    font-weight: bold;
+}
+.projectCards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 20px;
+    align-content: start;
+}
+.projects>.mainTitle{
+    grid-column: 1/3;
+}
+.card{
+    background-color: white;
+    color: black;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 170px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border-left: 8px solid #A36683;
+    box-shadow: 5px 5px 10px 0px #0c0322;
+}
+.card #cardTitle{
+    font-size: 13px;
+}
+.card .cardText{
+    font-size: 13px;
+    font-family: roboto;
+    text-align: left;
+    line-height: 1.1;
+}
+.cardButtons{
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+.cardButtons>button{
+    background-color: white;
+    border: none;
+    padding: 0;
+}
+.cardButtons svg{
+    width: 18px;
+    fill: #162B42;
+}
+.heart:hover>svg{
+    fill: #ca387f;
+}
+.eye:hover>svg{
+    fill: #A36683;
+}
+.share:hover>svg{
+    fill: #DA7F97;
+}
+
+.announcements{
+    grid-area: announcements;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.newsBlock{
+    background-color: white;
+    color: black;
+    padding: 20px 10px;
+    box-shadow: 5px 5px 10px 0px #0c0322;
+    border-radius: 10px;
+}
+#newsTitle{
+    font-size: 11px;
+}
+.newsText{
+    font-size: 11px;
+    font-family: roboto;
+    line-height: 1;
+}
+.news{
+    padding: 10px;
+}
+.notfirst{
+    border-top: 2px solid #A36683;
+}
+
+.trending{
+    grid-area: trending;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.trending img{
+    height: 40px;
+    aspect-ratio : 1 / 1;
+    border-radius: 25px;
+}
+.trendBlock{
+    background-color: white;
+    color: black;
+    padding: 20px 10px;
+    box-shadow: 5px 5px 10px 0px #0c0322;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.trend{
+    display: grid;
+    grid-template-columns: 40px 1fr ;
+    column-gap: 5px;
+}
+.trendPic{
+    grid-area: 1/1/3/2;
+}
+.trendUsername{
+    font-size: 13px;
+    font-family: robotobold;
+    align-self: end;
+}
+.trendProject{
+    font-size: 13px;
+    font-family: roboto;
+    align-self: start;
+}
+
