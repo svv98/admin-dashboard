@@ -35,6 +35,7 @@
 body{
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 .page{
     display: grid;
@@ -43,7 +44,7 @@ body{
     "sidebar header"
     "sidebar main";
     color: white;
-    height: 100%;
+    height: inherit;
 }
 
 
@@ -208,8 +209,7 @@ form>input:focus{
     color: white;
 }
 .buttons>button:hover{
-    font-family: lemonmilk;
-    background-color: #a380c4;font-size: 15px;
+    background-color: #a380c4;
     border: 2px solid #645374;
     outline: 1px solid #42364d;
     color: #42364d;
@@ -223,8 +223,8 @@ form>input:focus{
     display: grid;
     grid-template-columns: minmax(min-content,7fr) minmax(200px,3fr);
     grid-template-areas: 
-    "projects announcements"
-    "projects trending";
+    "projectCards announcements"
+    "projectCards trending";
     gap: 20px;
     padding: 10px 20px 20px;
 }
@@ -242,14 +242,15 @@ form>input:focus{
     font-weight: bold;
 }
 .projectCards{
+    grid-area: projectCards;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin: 0;
 }
 .projects{
-    grid-area: projects;
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    grid-template: repeat(auto-fill, minmax(170px, 1fr)) / repeat(2, minmax(250px, 1fr));
     gap: 20px;
     align-content: start;
 }
@@ -263,7 +264,6 @@ form>input:focus{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 170px;
     border-radius: 10px;
     box-sizing: border-box;
     border-left: 8px solid #A36683;
